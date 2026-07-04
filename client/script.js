@@ -1,4 +1,4 @@
-const API_BASE = "/api";
+const API_BASE = "https://rudram-ayurveda-api.onrender.com";
 const DEFAULT_WHATSAPP_NUMBER = "919555744498";
 let clinicWhatsAppNumber = DEFAULT_WHATSAPP_NUMBER;
 
