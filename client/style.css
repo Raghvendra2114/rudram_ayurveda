@@ -68,12 +68,7 @@ body {
   font-family: "Outfit", sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
-  background:
-    radial-gradient(circle at 12% 10%, rgba(45, 187, 116, 0.18), transparent 22rem),
-    radial-gradient(circle at 88% 12%, rgba(22, 171, 161, 0.16), transparent 22rem),
-    radial-gradient(circle at 82% 84%, rgba(230, 187, 88, 0.17), transparent 18rem),
-    radial-gradient(circle at 16% 86%, rgba(134, 223, 255, 0.18), transparent 18rem),
-    linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 55%, #f9fcf7 100%);
+  background: #f7f8f4;
   position: relative;
 }
 
@@ -214,7 +209,7 @@ textarea {
 }
 
 .site-header {
-  position: sticky;
+  position: relative;
   top: 0.65rem;
   z-index: 30;
   padding-top: 1rem;
@@ -226,8 +221,6 @@ textarea {
     linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.72)) padding-box,
     var(--gradient-border) border-box;
   border: 0.0625rem solid transparent;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
 }
 .glass-panel-1 {
   display: inline-block; /* FIX 1 */
@@ -242,8 +235,6 @@ textarea {
     var(--gradient-border) border-box;
 
   border: 1px solid transparent;
-
-  backdrop-filter: blur(12px); /* reduce blur (optional) */
 }
 .nav-shell {
   display: flex;
@@ -281,7 +272,7 @@ textarea {
   color: #ffffff;
   font-weight: 800;
   letter-spacing: 0.08em;
-  box-shadow: 0 16px 32px rgba(22, 171, 161, 0.28);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .brand-text {
@@ -310,7 +301,7 @@ textarea {
   gap: 0.32rem;
   background: rgba(255, 255, 255, 0.62);
   color: var(--text-primary);
-  box-shadow: inset 0 0 0 0.0625rem rgba(82, 141, 118, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .nav-toggle span {
@@ -670,14 +661,12 @@ p {
 .btn-primary {
   color: #ffffff;
   background: var(--gradient-strong);
-  box-shadow: 0 18px 36px rgba(22, 171, 161, 0.25);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  box-shadow:
-    0 20px 42px rgba(22, 171, 161, 0.3),
-    0 0 0 0.2rem rgba(22, 171, 161, 0.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .btn-secondary,
@@ -779,7 +768,7 @@ p {
   margin-bottom: 1rem;
   background: var(--gradient-soft);
   color: var(--secondary);
-  box-shadow: inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.84);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .card-icon svg,
@@ -807,7 +796,7 @@ p {
   place-items: center;
   border-radius: 1rem;
   color: var(--secondary);
-  box-shadow: inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.84);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .tone-mint {
@@ -954,7 +943,7 @@ p {
   height: 0.72rem;
   border-radius: 50%;
   background: var(--gradient-strong);
-  box-shadow: 0 0 0 0.18rem rgba(45, 187, 116, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .detail-list strong,
@@ -990,7 +979,7 @@ p {
   height: 0.78rem;
   border-radius: 50%;
   background: var(--gradient-strong);
-  box-shadow: 0 0 0 0.22rem rgba(45, 187, 116, 0.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .timeline-year {
@@ -1153,9 +1142,7 @@ p {
   place-items: center;
   border-radius: 1.1rem;
   color: var(--secondary);
-  box-shadow:
-    inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.84),
-    0 10px 20px rgba(22, 171, 161, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition:
     transform var(--transition),
     box-shadow var(--transition),
@@ -1175,9 +1162,7 @@ p {
 .service-mini-card:hover .service-icon,
 .service-mini-card:focus-within .service-icon {
   transform: translateY(-0.16rem) scale(1.04);
-  box-shadow:
-    inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.9),
-    0 14px 28px rgba(22, 171, 161, 0.14);
+ box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .service-icon--local {
@@ -1242,7 +1227,7 @@ p {
   border: 0.0625rem solid rgba(73, 133, 110, 0.14);
   background: rgba(255, 255, 255, 0.9);
   color: var(--text-primary);
-  box-shadow: inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   outline: none;
   transition:
     border-color var(--transition),
@@ -1259,9 +1244,7 @@ p {
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: rgba(22, 171, 161, 0.42);
-  box-shadow:
-    0 0 0 0.24rem rgba(22, 171, 161, 0.12),
-    0 16px 30px rgba(22, 171, 161, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .form-group-full {
@@ -1282,7 +1265,7 @@ p {
   background: rgba(255, 255, 255, 0.9);
   color: var(--text-primary);
   outline: none;
-  box-shadow: inset 0 0 0 0.0625rem rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   transition:
     border-color var(--transition),
     box-shadow var(--transition),
@@ -1337,9 +1320,7 @@ p {
 
 .field-shell.is-focused .field-control {
   border-color: rgba(22, 171, 161, 0.42);
-  box-shadow:
-    0 0 0 0.24rem rgba(22, 171, 161, 0.12),
-    0 16px 30px rgba(22, 171, 161, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .field-shell.is-filled .field-control {
@@ -1430,7 +1411,7 @@ p {
   place-items: center;
   background: linear-gradient(135deg, #21c25f, #33c38b 68%, #e6bb58);
   color: #ffffff;
-  box-shadow: 0 18px 34px rgba(33, 194, 95, 0.26);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   z-index: 34;
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -1438,9 +1419,8 @@ p {
 .whatsapp-float:hover,
 .whatsapp-float:focus-visible {
   transform: translateY(-0.18rem) scale(1.03);
-  box-shadow: 0 22px 42px rgba(33, 194, 95, 0.32);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
-
 .toast-stack {
   position: fixed;
   top: 5.5rem;
@@ -1463,11 +1443,11 @@ p {
 }
 
 .toast.success {
-  box-shadow: 0 20px 40px rgba(31, 156, 96, 0.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .toast.error {
-  box-shadow: 0 20px 40px rgba(214, 109, 95, 0.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .modal {
@@ -1513,10 +1493,8 @@ p {
 }
 
 [data-reveal] {
-  opacity: 0;
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+  opacity: 1;
+  transform: none;
 }
 
 [data-reveal="up"] {
@@ -1576,17 +1554,6 @@ p {
     --shadow-soft: 0 12px 30px rgba(32, 98, 74, 0.08);
     --shadow-medium: 0 18px 46px rgba(27, 78, 63, 0.1);
     --shadow-strong: 0 24px 60px rgba(20, 62, 50, 0.14);
-  }
-
-  .nav-shell,
-  .glass-panel {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
-
-  .glass-panel-1 {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
 
   body::before,
@@ -1822,4 +1789,8 @@ p {
     opacity: 1;
     transform: none;
   }
+}
+* {
+  animation: none !important;
+  transition: none !important;
 }
