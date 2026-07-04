@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 const appointmentRoutes = require("./routes/appointmentRoutes");
 const contactRoutes = require("./routes/contactRoutes");
@@ -11,7 +12,11 @@ dotenv.config({
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+
 const clientPath = path.resolve(__dirname, "..", "client");
+
 const pageRoutes = {
   "/about": "about.html",
   "/services": "services.html",
@@ -22,9 +27,10 @@ const pageRoutes = {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve the frontend files directly from the Express server.
+// Serve frontend static files
 app.use(express.static(clientPath));
 
+// Health check API
 app.get("/api/health", (request, response) => {
   response.status(200).json({
     success: true,
@@ -32,15 +38,18 @@ app.get("/api/health", (request, response) => {
   });
 });
 
+// API routes
 app.use("/api", appointmentRoutes);
 app.use("/api", contactRoutes);
 
+// Multi-page routes
 Object.entries(pageRoutes).forEach(([route, fileName]) => {
   app.get(route, (request, response) => {
     response.sendFile(path.join(clientPath, fileName));
   });
 });
 
+// API 404 handler
 app.use("/api", (request, response) => {
   response.status(404).json({
     success: false,
@@ -48,11 +57,12 @@ app.use("/api", (request, response) => {
   });
 });
 
+// Fallback route
 app.get(/^(?!\/api).*/, (request, response) => {
   response.sendFile(path.join(clientPath, "index.html"));
 });
 
-// Basic global error handler for unexpected runtime issues.
+// Global error handler
 app.use((error, request, response, next) => {
   console.error("Unexpected server error:", error);
 
@@ -62,6 +72,7 @@ app.use((error, request, response, next) => {
   });
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`Ayurveda clinic website running at http://localhost:${PORT}`);
 });

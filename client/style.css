@@ -847,7 +847,7 @@ p {
 }
 .visual-card img,
 .media-card img,
-.map-card img,
+.map-card iframe,
 .page-hero-panel img {
   width: 100%;
   aspect-ratio: 3 / 2;
@@ -1051,7 +1051,7 @@ p {
 }
 
 .contact-card span {
-  display: block;
+  display: flex;
 }
 
 .service-tag {
