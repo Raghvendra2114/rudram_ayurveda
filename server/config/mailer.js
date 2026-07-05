@@ -1,21 +1,35 @@
-const nodemailer = require("nodemailer");
-
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+const axios = require("axios");
 
 async function sendAdminEmail(mailOptions) {
-  return transporter.sendMail({
-    from: `"Rudram Ayurveda" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_USER,
-    ...mailOptions
-  });
+  const payload = {
+    sender: {
+      name: "Rudram Ayurveda",
+      email: process.env.EMAIL_USER
+    },
+
+    to: [
+      {
+        email: process.env.EMAIL_USER
+      }
+    ],
+
+    subject: mailOptions.subject,
+
+    htmlContent: mailOptions.html,
+
+    textContent: mailOptions.text
+  };
+
+  return axios.post(
+    "https://api.brevo.com/v3/smtp/email",
+    payload,
+    {
+      headers: {
+        "api-key": process.env.BREVO_API_KEY,
+        "Content-Type": "application/json"
+      }
+    }
+  );
 }
 
 module.exports = {
