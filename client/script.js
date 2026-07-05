@@ -222,7 +222,7 @@ function initializeAppointmentForm() {
 
       showToast(result.message || "Appointment request sent successfully.", "success");
       openBookingModal(appointmentData, whatsappLink);
-      openWhatsAppConfirmation(whatsappLink);
+      // openWhatsAppConfirmation(whatsappLink);
       form.reset();
       initializeDateInput();
       window.requestAnimationFrame(refreshFloatingFieldStates);
