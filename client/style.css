@@ -2069,3 +2069,6 @@ body::before, body::after, .page-grid, .page-orb { display: none; }
 .treatment-duration {
   font-family: "DM Sans", sans-serif;
 }
+
+/* Preserve the home hero scale when its heading is marked up as the page H1. */
+.hero-copy h1.home-hero-title { font-size: clamp(2.25rem, 6vw, 4rem); max-width: none; }
