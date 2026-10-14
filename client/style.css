@@ -972,7 +972,6 @@ p {
 
 .timeline-card::before {
   content: "";
-  position: absolute;
   left: 0.65rem;
   top: 1.3rem;
   width: 0.78rem;
